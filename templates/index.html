@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Honeytoken Effectiveness Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #1e1e2e; color: #eee; padding: 40px; }
+        h1 { color: #fff; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #444; }
+        th { background: #2a2a3d; }
+        .good { color: #4ade80; font-weight: bold; }
+        .partial { color: #facc15; font-weight: bold; }
+        .bad { color: #f87171; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>🍯 Honeytoken Effectiveness Dashboard</h1>
+    <p>Testing whether decoy files fool real attacker enumeration tools (linPEAS)</p>
+    <table>
+        <tr>
+            <th>Decoy</th>
+            <th>Flagged by linPEAS</th>
+            <th>Touched (Watcher Log)</th>
+            <th>Verdict</th>
+        </tr>
+        {% for r in results %}
+        <tr>
+            <td>{{ r.decoy }}</td>
+            <td>{{ r.flagged }}</td>
+            <td>{{ r.touched }}</td>
+            <td class="{{ r.css_class }}">{{ r.verdict }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
