@@ -7,7 +7,7 @@ Most honeytoken/deception tools (Canarytokens, Honeybits, etc.) assume that if y
 The idea is simple: plant some fake bait (a fake `.env`, a fake SSH key, fake AWS credentials), then run a real attacker tool against it and see what actually gets flagged, versus what my own file watcher picks up.
 
 I used linPEAS for the attack side since it's a real, widely used Linux enumeration script pentesters actually run. Everything runs inside a Docker container so nothing touches my actual machine.
-![Dashboard screenshot](Output-Dashboard-ss.png)
+![Dashboard screenshot](Output-Dashboard-screenshot.png)
 
 ## The pipeline
 
